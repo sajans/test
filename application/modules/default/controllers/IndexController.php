@@ -22,7 +22,7 @@ class Default_IndexController extends Zend_Controller_Action {
         $form = new Default_Form_Register();
           $formData = $this->getRequest()->getPost();
       if ($form->isValid($formData)) {
-          echo "valid"; exit;
+          var_dump($formData); exit;
       }else{
           $errorsMessages = $form->getMessages();
           var_dump($errorsMessages['first_name']); exit;
