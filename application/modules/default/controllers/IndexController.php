@@ -19,7 +19,14 @@ class Default_IndexController extends Zend_Controller_Action {
     }
 
     public function registerAction() {
-
+        $form = new Default_Form_Register();
+          $formData = $this->getRequest()->getPost();
+      if ($form->isValid($formData)) {
+          echo "valid"; exit;
+      }else{
+          $errorsMessages = $form->getMessages();
+          var_dump($errorsMessages['first_name']); exit;
+      }
         print_r($this->_request->getPost()); // action body
         die;
     }
