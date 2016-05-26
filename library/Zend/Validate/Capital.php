@@ -114,7 +114,7 @@ class Zend_Validate_Capital extends Zend_Validate_Abstract {
      */
     public function isValid($value) {
         //if (!is_string($value) && !is_int($value) && !is_float($value)) {
-        if (!(preg_match('/^[A-Z0-9_-]?$/',$value))) {
+        if (!(preg_match('/^[A-Z0-9_-]+$/',$value))) {
             $this->_error(self::INVALID);
             return false;
         }
